@@ -11,13 +11,13 @@
 This is a data generator for 2D object detection with axis-aligned rectangular bounding boxes. Its main focus is on flexible and easily extensible data augmentation.
 
 Main features:
-* It lets you easily define arbitrary chains of random or deterministic image transformations.
-* It provides most common photometric and geometric image transformations out of the box.
-* It let's you
-* It provides both random and deterministic versions of all image transformations.
-* It provides parsers for ground truth annotations in the MS COCO (JSON) and Pascal VOC (XML) formats as well as a wide range of CSV formats.
+* Lets you easily define arbitrary chains of image transformations.
+* Provides most common photometric and geometric image transformations out of the box.
+* Provides both random and deterministic versions of all image transformations.
+* Provides flexible options for how decide whether a random transformation of an image is "valid" (see tutorial).
+* Provides parsers for ground truth annotations in the MS COCO (JSON) and Pascal VOC (XML) formats as well as a wide range of CSV formats.
 
-Most data generators for training deep neural networks on computer vision tasks that ship with deep learning libraries are limited to image classification and those that I was able to find for 2D object detection are either only applicable to a specific model, provide only a small set of hard-coded and inflexible data augmentation features, are otherwise severely limited, or are just all around terrible pieces of code. When you train a deep neural network on an object detection task, the data augmentation you perform is one of the most important factors that determine the success of your training, therefore I wrote this data generator specifically with the goal of flexible and easily extensible data augmentation.
+Most data generators for training deep neural networks on computer vision tasks that ship with deep learning libraries are limited to image classification and those that I was able to find for 2D object detection are either only applicable to a specific model, provide only a small set of hard-coded and inflexible data augmentation features, or are otherwise severely limited. When you train a deep neural network on an object detection task, the data augmentation you perform is one of the most important factors that determine the success of your training, therefore I wrote this data generator specifically with the goal of flexible and easily extensible data augmentation.
 
 ### Dependencies
 
