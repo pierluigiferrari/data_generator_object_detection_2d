@@ -23,8 +23,6 @@ Main features:
 * Provides flexible options for how decide whether a random transformation of an image is "valid" (see tutorial).
 * Provides parsers for ground truth annotations in the MS COCO (JSON) and Pascal VOC (XML) formats as well as for a wide range of CSV formats.
 
-Most data generators for training deep neural networks on computer vision tasks that ship with deep learning libraries are limited to image classification and those that I was able to find for 2D object detection are either only applicable to a specific model, provide only a small set of hard-coded and inflexible data augmentation features, or are otherwise severely limited. When you train a deep neural network on an object detection task, data augmentation one of the most important factors that determine the success of your training, therefore I wrote this data generator specifically with the goal of flexible and easily extensible data augmentation.
-
 ### Dependencies
 
 * Python 3.x
