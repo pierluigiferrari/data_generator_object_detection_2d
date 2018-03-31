@@ -20,7 +20,7 @@ Main features:
 * Lets you easily define arbitrary chains of image transformations.
 * Provides most common photometric and geometric image transformations out of the box.
 * Provides both random and deterministic versions of all image transformations.
-* Provides flexible options for how decide whether a random transformation of an image is "valid" (see tutorial).
+* Provides flexible options for how to decide whether a random transformation of an image is "valid" (see tutorial).
 * Provides parsers for ground truth annotations in the MS COCO (JSON) and Pascal VOC (XML) formats as well as for a wide range of CSV formats.
 
 ### Dependencies
