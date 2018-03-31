@@ -34,6 +34,6 @@ Python 2 compatibility: This implementation seems to work with Python 2.7, but I
 
 ### How to use it
 
-Everything you need to know in order to use this data generator is explained in the following Jupyter notebook:
+Everything you need to know in order to use this data generator is explained in the following Jupyter notebook tutorial:
 
 * [Data Generator Tutorial](data_generator_tutorial.ipynb)
