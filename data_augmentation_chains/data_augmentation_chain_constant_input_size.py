@@ -74,7 +74,7 @@ class DataAugmentationConstantInputSize:
                                               n_boxes_min=self.n_boxes_min,
                                               labels_format=self.labels_format)
 
-        # Utility distortions
+        # Utility transformations
         self.convert_RGB_to_HSV = ConvertColor(current='RGB', to='HSV')
         self.convert_HSV_to_RGB = ConvertColor(current='HSV', to='RGB')
         self.convert_to_float32 = ConvertDataType(to='float32')
