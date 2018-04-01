@@ -14,7 +14,7 @@
 
 ### Overview
 
-This is a data generator for 2D object detection with axis-aligned rectangular bounding boxes. Its main focus is on flexible and easily extensible data augmentation.
+This is a data generator for 2D object detection with axis-aligned rectangular bounding boxes. Its main focus is on flexible and easily extensible data augmentation capabilities.
 
 Main features:
 * Lets you easily define arbitrary chains of image transformations.
@@ -28,7 +28,7 @@ Main features:
 * Python 3.x
 * Numpy
 * OpenCV
-* Beautiful Soup 4.x (to parse XML files)
+* Beautiful Soup 4.x
 
 Python 2 compatibility: This implementation seems to work with Python 2.7, but I don't provide any support for it. It's 2018 and nobody should be using Python 2 anymore.
 
