@@ -64,8 +64,12 @@ class DataAugmentationConstantInputSize:
         self.labels_format = labels_format
 
         # Determines which boxes are kept in an image after the transformations have been applied.
-        self.box_filter = BoxFilter(overlap_criterion=self.overlap_criterion,
-                                    bounds=self.bounds_box_filter,
+        self.box_filter = BoxFilter(check_overlap=True,
+                                    check_min_area=True,
+                                    check_degenerate=True,
+                                    overlap_criterion=self.overlap_criterion,
+                                    overlap_bounds=self.bounds_box_filter,
+                                    min_area=16,
                                     labels_format=self.labels_format)
 
         # Determines whether the result of the transformations is a valid training image.
@@ -74,7 +78,7 @@ class DataAugmentationConstantInputSize:
                                               n_boxes_min=self.n_boxes_min,
                                               labels_format=self.labels_format)
 
-        # Utility transformations
+        # Utility distortions
         self.convert_RGB_to_HSV = ConvertColor(current='RGB', to='HSV')
         self.convert_HSV_to_RGB = ConvertColor(current='HSV', to='RGB')
         self.convert_to_float32 = ConvertDataType(to='float32')
@@ -153,8 +157,6 @@ class DataAugmentationConstantInputSize:
 
     def __call__(self, image, labels=None):
 
-        self.box_filter.labels_format = self.labels_format
-        self.image_validator.labels_format = self.labels_format
         self.random_translate.labels_format = self.labels_format
         self.random_zoom_in.labels_format = self.labels_format
         self.random_zoom_out.labels_format = self.labels_format
