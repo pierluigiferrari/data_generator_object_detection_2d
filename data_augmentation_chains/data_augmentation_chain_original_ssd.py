@@ -93,7 +93,7 @@ class SSDRandomCrop:
                                           image_validator=self.image_validator,
                                           bound_generator=self.bound_generator,
                                           n_trials_max=50,
-                                          clip_boxes=False,
+                                          clip_boxes=True,
                                           prob=0.857,
                                           labels_format=self.labels_format)
 
