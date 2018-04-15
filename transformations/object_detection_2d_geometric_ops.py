@@ -239,7 +239,7 @@ class Translate:
     def __init__(self,
                  dy,
                  dx,
-                 clip_boxes=False,
+                 clip_boxes=True,
                  box_filter=None,
                  background=(0,0,0),
                  labels_format={'class_id': 0, 'xmin': 1, 'ymin': 2, 'xmax': 3, 'ymax': 4}):
@@ -326,7 +326,7 @@ class RandomTranslate:
                  dy_minmax=(0.03,0.3),
                  dx_minmax=(0.03,0.3),
                  prob=0.5,
-                 clip_boxes=False,
+                 clip_boxes=True,
                  box_filter=None,
                  image_validator=None,
                  n_trials_max=3,
@@ -454,7 +454,7 @@ class Scale:
 
     def __init__(self,
                  factor,
-                 clip_boxes=False,
+                 clip_boxes=True,
                  box_filter=None,
                  background=(0,0,0),
                  labels_format={'class_id': 0, 'xmin': 1, 'ymin': 2, 'xmax': 3, 'ymax': 4}):
@@ -541,7 +541,7 @@ class RandomScale:
                  min_factor=0.5,
                  max_factor=1.5,
                  prob=0.5,
-                 clip_boxes=False,
+                 clip_boxes=True,
                  box_filter=None,
                  image_validator=None,
                  n_trials_max=3,
@@ -762,7 +762,7 @@ class RandomRotate:
         self.angles = angles
         self.prob = prob
         self.labels_format = labels_format
-        self.rotate = Rotate(angle=0, labels_format=self.labels_format)
+        self.rotate = Rotate(angle=90, labels_format=self.labels_format)
 
     def __call__(self, image, labels=None):
 
@@ -771,7 +771,7 @@ class RandomRotate:
             # Pick a rotation angle.
             self.rotate.angle = random.choice(self.angles)
             self.rotate.labels_format = self.labels_format
-            return rotate(image, labels)
+            return self.rotate(image, labels)
 
         elif labels is None:
             return image
